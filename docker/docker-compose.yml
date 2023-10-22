@@ -1,0 +1,19 @@
+version: "3"
+services:
+  jupyterlab:
+    image:  datascience-notebook-agtech:py-3.9.13-20230127
+    #container_name: my-datascience-notebook-agtech
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - AWS_ACCESS_KEY_ID=AKIXXXXXXXXXXXXXXXXXX
+      - AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    ports:
+      - "127.0.0.1:8888:8888"
+    # 230516 自pcのパスをマウント先として修正
+    volumes:
+      # - /mnt/c/work/01_prj/AgrTech/06_python/work:/home/jovyan/work
+      - /mnt/d/11_github/baseballtech:/home/jovyan/work
+
+
+
+    command: start.sh jupyter lab --NotebookApp.password='sha1:29d9a096031f:81a881eb8a6b162f336a07720b89626aa6c984de'

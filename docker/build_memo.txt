@@ -1,0 +1,5 @@
+# Dockerファイル格納先まで移動する
+cd /mnt/c/Users/j11693/home_large_project/20230210_実証試験用プログラム
+# 移動後に以下コマンドを実行するとdockerイメージのビルドが開始する。
+sudo docker image build -t datascience-notebook-agtech:py-3.9.13-20230127 .
+
